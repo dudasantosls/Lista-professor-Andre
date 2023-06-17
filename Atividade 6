@@ -4,7 +4,7 @@ class Main {
     Scanner teclado = new Scanner(System.in);
     double gf, gc ;
     int n;
-    System.out.println("Bem vindo ao conversor de temperatra.\n selecione (1) para converter graus Fahrenhei para Celsius.\n selecione (2) para converter graus Celsius para Fahrenhei");
+    System.out.println("Bem vindo ao conversor de temperatura.\n selecione (1) para converter graus Fahrenhei para Celsius.\n selecione (2) para converter graus Celsius para Fahrenhei");
   n = teclado.nextInt();
   if(n == 1) {
       System.out.println("vamos converter graus Fahrenhei para graus Celsius !");
