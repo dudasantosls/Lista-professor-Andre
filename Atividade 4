@@ -1,0 +1,68 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int totalCandidatos = 5;
+        String[] nomesCandidatos = new String[totalCandidatos];
+        int[] numerosCandidatos = new int[totalCandidatos];
+        int[] votosCandidatos = new int[totalCandidatos];
+        int votosTotais = 0;
+
+        // Registro dos candidatos
+        for (int i = 0; i < totalCandidatos; i++) {
+            System.out.print("Digite o nome do candidato " + (i+1) + ": ");
+            nomesCandidatos[i] = scanner.nextLine();
+
+            System.out.print("Digite o número do candidato " + (i+1) + ": ");
+            numerosCandidatos[i] = scanner.nextInt();
+            scanner.nextLine();  // Limpar o buffer do scanner
+        }
+
+        // Registro dos votos
+        while (true) {
+            System.out.print("Digite o número do candidato (ou 0 para encerrar): ");
+            int numeroVoto = scanner.nextInt();
+
+            if (numeroVoto == 0) {
+                break;
+            }
+
+            boolean votoValido = false;
+            for (int i = 0; i < totalCandidatos; i++) {
+                if (numeroVoto == numerosCandidatos[i]) {
+                    votosCandidatos[i]++;
+                    votosTotais++;
+                    votoValido = true;
+                    break;
+                }
+            }
+
+            if (!votoValido) {
+                System.out.println("Número de candidato inválido. Por favor, tente novamente.");
+            }
+        }
+
+        // Cálculo do candidato mais votado
+        int candidatoMaisVotado = 0;
+        boolean houveEmpate = false;
+
+        for (int i = 1; i < totalCandidatos; i++) {
+            if (votosCandidatos[i] > votosCandidatos[candidatoMaisVotado]) {
+                candidatoMaisVotado = i;
+                houveEmpate = false;
+            
+            } else if (votosCandidatos[i] == votosCandidatos[candidatoMaisVotado]) {
+                houveEmpate = true;
+            }
+        }
+
+        // Verificar se houve um candidato com mais de 50% dos votos
+        double porcentagemMaisVotado = (votosCandidatos[candidatoMaisVotado] * 100.0) / votosTotais;
+
+        if (porcentagemMaisVotado >= 50) {
+            System.out.println("Candidato mais votado: " + nomesCandidatos[candidatoMaisVotado]);
+            System.out.println("Número de votos: " + votosCandidatos[candidatoMaisVotado]);
+        } else {
+            if (houveEmpate) {
+                System.out.println("Houve um empate entre os candidatos mais votados");
