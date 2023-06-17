@@ -1,0 +1,58 @@
+import java.util.Scanner;
+package com.mycompany.banco;
+
+
+public class Banco {
+    Scanner teclado = new Scanner(System.in);
+      int extrato, conta, senha ,banco, cpf, OP;     
+    double saque, saldo, extrato, deposito;
+    char nome;
+            System.out.println( "Digite seu cpf");
+            this.cpf = new 
+                    System.out.println( "Digite sua senha");
+                    this.
+        System.out.println( "digite sua conta" );
+                    this.conta = conta;
+                    
+                    
+                  verifica identificacao
+                  
+            System.out.println( "Digite a opção desejada");
+            System.out.println( "Digite 1 para Saque");
+            System.out.println( "Digite 2 para depósito");
+            System.out.println( "Digite 3 para saldo");
+            this.  OP
+            if (OP = 1)
+               System.out.println( "Digite o valor do saque");
+               this.saque
+               saldo = ( saldo - saque );
+                       else if (OP = 2)
+                            System.out.println( "Digite o valor do depósito");
+                            this.deposito
+                            saldo = ( saldo + deposito );
+                                else if (OP = 3)
+                                System.out.println( "O valor do saldo é" + saldo);
+
+                                
+
+
+
+    
+        public Banco(int extrato, int conta, int senha, int banco, int cpf, int OP, double saque, double saldo, double deposito, char nome, <any> , <any> , verifica identificacao, <any> , OP , <any> , verifica System) {
+        this.extrato = extrato;
+        this.conta = conta;
+        this.senha = senha;
+        this.banco = banco;
+        this.cpf = cpf;
+        this.OP = OP;
+        this.saque = saque;
+        this.saldo = saldo;
+        this.deposito = deposito;
+        this.nome = nome;
+        this.<error> = <error>;
+        this.<error> = <error>;
+        this.identificacao = identificacao;
+        this.<error> = <error>;
+        this.<error> = <error>;
+        this.<error> = <error>;
+        this.System = System;
